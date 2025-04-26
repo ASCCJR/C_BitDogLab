@@ -22,13 +22,14 @@ int main() {
     gpio_set_dir(LEDG, GPIO_OUT);
     gpio_set_dir(LEDB, GPIO_OUT);
 
-//gpio_set_dir(LEDR, GPIO_OUT) é mais explícito que gpio_set_dir(LEDR, true). GPIO_OUT deixa claro que o pino está sendo configurado como saída.
-//antes era:
+// gpio_set_dir(LEDR, GPIO_OUT) é mais explícito do que gpio_set_dir(LEDR, true). 
+// GPIO_OUT deixa claro que o pino está sendo configurado como saída.
+// antes era:
 // gpio_set_dir(LEDR, true);
 // gpio_set_dir(LEDG, true);
 // gpio_set_dir(LEDB, true);
 
-//A parte  gpio_set_slew_rate foi removida. --> Configuração é desnecessária para LEDs, pois é útil apenas em comunicações de alta velocidade (ex: SPI)
+// A parte  gpio_set_slew_rate foi removida. --> Configuração é desnecessária para LEDs, pois é útil em comunicações de alta velocidade (ex: SPI)
 
     while (true) {
         // Sequência: Vermelho -> Verde -> Azul -> Branco -> Repete
